@@ -1,0 +1,36 @@
+<div class="signup-container">
+    <h2>Sign Up</h2>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <!-- Name -->
+        <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name" />
+            <div *ngIf="signUpForm.get('name')?.invalid && signUpForm.get('name')?.touched">
+                <small *ngIf="signUpForm.get('name')?.errors?.['required']">Name is required.</small>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" />
+            <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
+                <small *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required.</small>
+                <small *ngIf="signUpForm.get('email')?.errors?.['email']">Enter a valid email.</small>
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password" />
+            <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched">
+                <small *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required.</small>
+                <small *ngIf="signUpForm.get('password')?.errors?.['minlength']">
+                    Password must be at least 6 characters.
+                </small>
+            </div>
+        </div>
+        <button type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
+    </form>
+</div>

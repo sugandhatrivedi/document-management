@@ -1,0 +1,40 @@
+<app-navbar *ngIf="isLogin"></app-navbar>
+<div class="role-management">
+    <h2>Manage Roles</h2>
+    <form [formGroup]="roleForm" (ngSubmit)="addRole()">
+        <div>
+            <label for="user" style="padding-right: 10px">User</label>
+            <input id="user" type="text" formControlName="user" />
+            <label for="role" style="padding-right: 10px; padding-left: 10px">Role</label>
+            <input id="role" type="text" formControlName="role" />
+            <button style="margin-left: 10px" type="submit" [disabled]="roleForm.invalid">Add Role</button>
+        </div>
+        <div>
+            <span *ngIf="roleForm.get('user')?.invalid && roleForm.get('user')?.touched" style="padding-left: 40px;">
+                <small>UserName is required.</small>
+            </span>
+            <span *ngIf="roleForm.get('role')?.invalid && roleForm.get('role')?.touched" style="padding-left: 108px;">
+                <small>Role is required.</small>
+            </span>
+        </div>
+    </form>
+</div>
+<div *ngIf="roles.length > 0">
+    <h2>Existing Roles</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>User</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let user of roles; let i = index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{user.role}}</td>
+                <td>{{user.userName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

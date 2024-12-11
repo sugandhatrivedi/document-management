@@ -1,0 +1,23 @@
+<app-navbar *ngIf="isLogin"></app-navbar>
+<div class="upload-container">
+    <h2>Upload Document</h2>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="onUpload()">Upload</button>
+</div>
+<div *ngIf="attachedFiles.length > 0">
+    <h2>Attached Files</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>File</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let file of attachedFiles; let i = index">
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{file.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

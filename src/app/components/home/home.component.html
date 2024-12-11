@@ -1,0 +1,11 @@
+<div class="tile-container">
+    <div class="tile" *ngFor="let tile of tiles">
+        <a [href]="tile?.link" style="text-decoration: none;">
+            <div class="tile-content">
+                <h3>{{ tile.title }}</h3>
+                <p>{{ tile.description }}</p>
+
+            </div>
+        </a>
+    </div>
+</div>
