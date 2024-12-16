@@ -11,10 +11,10 @@
         </div>
         <div>
             <span *ngIf="roleForm.get('user')?.invalid && roleForm.get('user')?.touched" style="padding-left: 40px;">
-                <small>UserName is required.</small>
+                <small class="error">UserName is required.</small>
             </span>
             <span *ngIf="roleForm.get('role')?.invalid && roleForm.get('role')?.touched" style="padding-left: 108px;">
-                <small>Role is required.</small>
+                <small class="error">Role is required.</small>
             </span>
         </div>
     </form>

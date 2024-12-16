@@ -6,7 +6,7 @@
             <label for="name">Name</label>
             <input id="name" type="text" formControlName="name" />
             <div *ngIf="signUpForm.get('name')?.invalid && signUpForm.get('name')?.touched">
-                <small *ngIf="signUpForm.get('name')?.errors?.['required']">Name is required.</small>
+                <small *ngIf="signUpForm.get('name')?.errors?.['required']" class="error">Name is required.</small>
             </div>
         </div>
 
@@ -15,8 +15,8 @@
             <label for="email">Email</label>
             <input id="email" type="email" formControlName="email" />
             <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched">
-                <small *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required.</small>
-                <small *ngIf="signUpForm.get('email')?.errors?.['email']">Enter a valid email.</small>
+                <small *ngIf="signUpForm.get('email')?.errors?.['required']" class="error">Email is required.</small>
+                <small *ngIf="signUpForm.get('email')?.errors?.['email']" class="error">Enter a valid email.</small>
             </div>
         </div>
 

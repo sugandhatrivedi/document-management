@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   constructor(private router: Router){}
-  menuActive = false;
+  // menuActive = false;
 
-  toggleMenu() {
-    this.menuActive = !this.menuActive;
-  }
+  // toggleMenu() {
+
+  //   this.menuActive = !this.menuActive;
+
+  // }
 
   logOut() {
     localStorage.setItem('loggedIn-user', false.toString());

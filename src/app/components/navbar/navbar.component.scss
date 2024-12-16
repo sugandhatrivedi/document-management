@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+.active {
+  background: #003340;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-links {
